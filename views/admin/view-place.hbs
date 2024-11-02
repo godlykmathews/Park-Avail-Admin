@@ -3,6 +3,33 @@
         <div class="row mt-4 mr-2">
             <a href="/admin/add-place" class="btn btn-success ml-auto">Add Places</a>
         </div>
+        <div class="row mt-5">
+            <div class="col-12">
+                <form action="/admin/place" method="GET" role="form">
+
+                    <label for="district">Choose a District: </label>
+                    <select name="district" id="district" required>
+                        <option value="">Select</option>
+                        <option value="Alappuzha">Alappuzha</option>
+                        <option value="Ernakulam">Ernakulam</option>
+                        <option value="Idukki">Idukki</option>
+                        <option value="Kannur">Kannur</option>
+                        <option value="Kasaragod">Kasaragod</option>
+                        <option value="Kollam">Kollam</option>
+                        <option value="Kottayam">Kottayam</option>
+                        <option value="Kozhikode">Kozhikode</option>
+                        <option value="Malappuram">Malappuram</option>
+                        <option value="Palakkad">Palakkad</option>
+                        <option value="Pathanamthitta">Pathanamthitta</option>
+                        <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                        <option value="Thrissur">Thrissur</option>
+                        <option value="Wayanad">Wayanad</option>                      
+                    </select>
+
+                    <button type="submit" class="btn btn-primary">Show Spots</button>
+                </form>
+            </div>
+        </div>
         <div class="table-responsive mt-5">
             <table class="table table-striped table-bordered table-hover d-none d-md-table">
                 <thead class="thead-dark">

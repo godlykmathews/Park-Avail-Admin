@@ -12,6 +12,33 @@ router.get('/', function (req, res, next) {
   })
 });
 
+// View all places filtered by district
+router.get('/place', async (req, res) => {
+  try {
+      const district = req.query.district; // Get district from query parameters
+      let products = await productHelper.getAllProducts();
+
+      products = products
+          .filter(product => product.district === district) // Filter products by selected district
+          .map((product, index) => {
+              return { ...product, counter: index + 1 };
+          });
+
+      res.render('user/view-place', { 
+          products,
+          admin: true,
+          district // Pass the district to the view for future use
+      });
+
+  } catch (err) {
+      req.session.message = {
+          type: 'error',
+          text: 'Error fetching places'
+      };
+      res.redirect('/admin');
+  }
+});
+
 router.get('/login', (req, res) => {
   if(req.session.loggedIn){
     res.redirect('/');

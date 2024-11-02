@@ -3,7 +3,7 @@
         <div class="row mt-5">
             <div class="col-12">
                 <form action="/admin/edit-place/{{place._id}}" method="POST" role="form" enctype="multipart/form-data">
-                    <legend class="text-center" style="font-weight: 700;">Edit Place</legend>
+                    <legend class="text-center" style="font-weight: 700;">Edit Place : {{place.name}}</legend>
 
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -32,8 +32,6 @@
                         <option value="Thiruvananthapuram">Thiruvananthapuram</option>
                         <option value="Thrissur">Thrissur</option>
                         <option value="Wayanad">Wayanad</option>                      
-
-
                     </select>
 
                     <div class="form-group">
