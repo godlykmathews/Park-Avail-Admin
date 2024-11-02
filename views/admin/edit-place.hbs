@@ -7,73 +7,73 @@
 
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" name="name" id="name" value="{{place.name}}" placeholder="Place Name" required>
+                        <input type="text" class="form-control" name="name" id="name" value="{{place.name}}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="price">Price</label>
-                        <input type="text" class="form-control" name="price" id="price" value="{{place.price}}" placeholder="Price" required>
+                        <input type="text" class="form-control" name="price" id="price" value="{{place.price}}" required>
                     </div>
 
                     <label for="district">Choose a District:</label>
                     <select name="district" id="district" required>
-                        <option value="Alappuzha" {{#if (eq place.district "Alappuzha")}}selected{{/if}}>Alappuzha</option>
-                        <option value="Ernakulam" {{#if (eq place.district "Ernakulam")}}selected{{/if}}>Ernakulam</option>
-                        <option value="Idukki" {{#if (eq place.district "Idukki")}}selected{{/if}}>Idukki</option>
-                        <option value="Kannur" {{#if (eq place.district "Kannur")}}selected{{/if}}>Kannur</option>
-                        <option value="Kasaragod" {{#if (eq place.district "Kasaragod")}}selected{{/if}}>Kasaragod</option>
-                        <option value="Kollam" {{#if (eq place.district "Kollam")}}selected{{/if}}>Kollam</option>
-                        <option value="Kottayam" {{#if (eq place.district "Kottayam")}}selected{{/if}}>Kottayam</option>
-                        <option value="Kozhikode" {{#if (eq place.district "Kozhikode")}}selected{{/if}}>Kozhikode</option>
-                        <option value="Malappuram" {{#if (eq place.district "Malappuram")}}selected{{/if}}>Malappuram</option>
-                        <option value="Palakkad" {{#if (eq place.district "Palakkad")}}selected{{/if}}>Palakkad</option>
-                        <option value="Pathanamthitta" {{#if (eq place.district "Pathanamthitta")}}selected{{/if}}>Pathanamthitta</option>
-                        <option value="Thiruvananthapuram" {{#if (eq place.district "Thiruvananthapuram")}}selected{{/if}}>Thiruvananthapuram</option>
-                        <option value="Thrissur" {{#if (eq place.district "Thrissur")}}selected{{/if}}>Thrissur</option>
-                        <option value="Wayanad" {{#if (eq place.district "Wayanad")}}selected{{/if}}>Wayanad</option>
+                        <option value="Alappuzha">Alappuzha</option>
+                        <option value="Ernakulam">Ernakulam</option>
+                        <option value="Idukki">Idukki</option>
+                        <option value="Kannur">Kannur</option>
+                        <option value="Kasaragod">Kasaragod</option>
+                        <option value="Kollam">Kollam</option>
+                        <option value="Kottayam">Kottayam</option>
+                        <option value="Kozhikode">Kozhikode</option>
+                        <option value="Malappuram">Malappuram</option>
+                        <option value="Palakkad">Palakkad</option>
+                        <option value="Pathanamthitta">Pathanamthitta</option>
+                        <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                        <option value="Thrissur">Thrissur</option>
+                        <option value="Wayanad">Wayanad</option>                        
                     </select>
 
                     <div class="form-group">
                         <label for="location">Location</label>
-                        <input type="text" class="form-control" name="location" id="location" value="{{place.location}}" placeholder="Location" required>
+                        <input type="text" class="form-control" name="location" id="location" value="{{ place.location }}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="lat">Latitude</label>
-                        <input type="text" class="form-control" name="lat" id="lat" value="{{place.lat}}" placeholder="Latitude" required>
+                        <input type="text" class="form-control" name="lat" id="lat" value="{{place.lat }}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="lon">Longitude</label>
-                        <input type="text" class="form-control" name="lon" id="lon" value="{{place.lon}}" placeholder="Longitude" required>
+                        <input type="text" class="form-control" name="lon" id="lon" value="{{ place.lon }}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="tslots">Total Slots</label>
-                        <input type="text" class="form-control" name="tslots" id="tslots" value="{{place.tslots}}" placeholder="Total Slots" required>
+                        <input type="text" class="form-control" name="tslots" id="tslots" value="{{ place.tslots }}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="availableButton">Available</label>
-                        <input type="checkbox" name="availableButton" id="availableButton" value="on" {{#if place.availability}}checked{{/if}}>
+                        <input type="checkbox" name="availableButton" id="availableButton" >
                     </div>
 
                     <div class="form-group">
                         <label for="aslots">Available Slots</label>
-                        <input type="text" class="form-control" name="aslots" id="aslots" value="{{place.aslots}}" placeholder="Available Slots" required>
+                        <input type="text" class="form-control" name="aslots" id="aslots" value="{{ place.aslots }}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <input type="text" class="form-control" name="description" id="description" value="{{place.description}}" placeholder="Description">
+                        <input type="text" class="form-control" name="description" id="description" value="{{ place.description }}">
                     </div>
 
                     <div class="form-group">
-                        <label for="image">Image Upload/URL</label>
-                        <input type="text" class="form-control" name="image" id="image" placeholder="Image JPG URL">
+                        <label for="image">Image URL</label>
+                        <input type="text" class="form-control" name="image" id="image" value="{{ place.image }}">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Update Place</button>
                 </form>
             </div>
         </div>

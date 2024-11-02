@@ -82,9 +82,10 @@ router.get('/delete-place/:id', async (req, res) => {
 router.get('/edit-place/:id', async (req, res) => {
     try {
         const placeId = req.params.id;
-        const place = await productHelper.getProductById(placeId);
+        const place = await productHelper.getProductById(placeId); // Fetch the place from DB
 
         if (place) {
+            // Render the edit-place view and pass the 'place' object to it
             res.render('admin/edit-place', { place, admin: true });
         } else {
             req.session.message = {
@@ -94,14 +95,15 @@ router.get('/edit-place/:id', async (req, res) => {
             res.redirect('/admin');
         }
     } catch (error) {
-        console.error('Error fetching place:', error);
+        console.error('Error fetching place for editing:', error);
         req.session.message = {
             type: 'error',
-            text: 'Error fetching place'
+            text: 'Error fetching place for editing'
         };
         res.redirect('/admin');
     }
 });
+
 
 // Handle edit place form submission
 router.post('/edit-place/:id', async (req, res) => {
@@ -125,6 +127,7 @@ router.post('/edit-place/:id', async (req, res) => {
         res.redirect('/admin');
     }
 });
+
 
 
 
