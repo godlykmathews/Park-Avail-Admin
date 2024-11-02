@@ -1,0 +1,82 @@
+<section>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-12">
+                <form action="/admin/add-place" method="POST" role="form" enctype="multipart/form-data">
+                    <legend class="text-center" style="font-weight: 700;">Add Place</legend>
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Place Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="text" class="form-control" name="price" id="price" placeholder="Price" required>
+                    </div>
+
+                    <label for="district">Choose a District:</label>
+
+                    <select name="district" id="district" required>
+                        <option value="Alappuzha">Alappuzha</option>
+                        <option value="Ernakulam">Ernakulam</option>
+                        <option value="Idukki">Idukki</option>
+                        <option value="Kannur">Kannur</option>
+                        <option value="Kasaragod">Kasaragod</option>
+                        <option value="Kollam">Kollam</option>
+                        <option value="Kottayam">Kottayam</option>
+                        <option value="Kozhikode">Kozhikode</option>
+                        <option value="Malappuram">Malappuram</option>
+                        <option value="Palakkad">Palakkad</option>
+                        <option value="Pathanamthitta">Pathanamthitta</option>
+                        <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                        <option value="Thrissur">Thrissur</option>
+                        <option value="Wayanad">Wayanad</option>
+                    </select>
+
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" class="form-control" name="location" id="location" placeholder="Location" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lat">Latitude</label>
+                        <input type="text" class="form-control" name="lat" id="lat" placeholder="Latitude" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lon">Longitude</label>
+                        <input type="text" class="form-control" name="lon" id="lon" placeholder="Longitude" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tslots">Total Slots</label>
+                        <input type="text" class="form-control" name="tslots" id="tslots" placeholder="Total Slots" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="availableButton">Available</label>
+                        <input type="checkbox" name="availableButton" id="availableButton" value="on">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="aslots">Available Slots</label>
+                        <input type="text" class="form-control" name="aslots" id="aslots" placeholder="Available Slots" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" class="form-control" name="description" id="description" placeholder="Description">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="image">Image Upload/URL</label>
+                        <input type="text" class="form-control" name="image" id="image" placeholder="Image JPG URL">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
