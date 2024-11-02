@@ -15,6 +15,7 @@
                         <th scope="col">Image preview</th>
                         <th scope="col">Modified Date</th>
                         <th scope="col">Actions</th>
+                        <th scope="col">Availability</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,10 +36,17 @@
                         <td>{{formatDate this.createdAt}}</td>
                         <td>
                             <div class="d-flex justify-content-around">
-                                <a href="/admin/edit-place/{{this._id}}" class="btn btn-primary btn-sm mr-2"><i class="fa-regular fa-pen-to-square"></i></a>
-                                <a href="/admin/delete-place/{{this._id}}" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm ml-2"><i class="fa-solid fa-trash"></i></a>
+                                <a href="/admin/edit-place/{{this._id}}" class="btn btn-primary btn-sm mr-2" title="Edit"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a href="/admin/delete-place/{{this._id}}" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm ml-2" title="Delete"><i class="fa-solid fa-trash"></i></a>
                             </div>
                         </td>
+                        <th scope="row">
+                            {{#if this.availability}}
+                                <button class="btn btn-success btn-sm"  data-toggle="tooltip" title="Available" >Available</button>
+                            {{else}}
+                                <button class="btn btn-danger btn-sm"  data-toggle="tooltip" title="Not Available" >Not Available</button>
+                            {{/if}}
+                        </th>
                     </tr>
                     {{/each}}
                 </tbody>

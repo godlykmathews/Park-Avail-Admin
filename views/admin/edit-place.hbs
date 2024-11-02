@@ -15,22 +15,9 @@
                         <input type="text" class="form-control" name="price" id="price" value="{{place.price}}" required>
                     </div>
 
-                    <label for="district">Choose a District:</label>
+                    <label for="district" style="color: red;">District cannot be changed</label>
                     <select name="district" id="district" required>
-                        <option value="Alappuzha">Alappuzha</option>
-                        <option value="Ernakulam">Ernakulam</option>
-                        <option value="Idukki">Idukki</option>
-                        <option value="Kannur">Kannur</option>
-                        <option value="Kasaragod">Kasaragod</option>
-                        <option value="Kollam">Kollam</option>
-                        <option value="Kottayam">Kottayam</option>
-                        <option value="Kozhikode">Kozhikode</option>
-                        <option value="Malappuram">Malappuram</option>
-                        <option value="Palakkad">Palakkad</option>
-                        <option value="Pathanamthitta">Pathanamthitta</option>
-                        <option value="Thiruvananthapuram">Thiruvananthapuram</option>
-                        <option value="Thrissur">Thrissur</option>
-                        <option value="Wayanad">Wayanad</option>                        
+                        <option value="{{place.district}}">{{place.district}}</option>                       
                     </select>
 
                     <div class="form-group">

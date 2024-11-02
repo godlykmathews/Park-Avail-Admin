@@ -12,6 +12,13 @@ const adminRouter = require('./routes/admin');
 
 const Handlebars = require('handlebars'); // Handlebars helpers
 
+Handlebars.registerHelper('ifCond', function(v1, v2, options) {
+    if(v1 === v2) {
+      return options.fn(this);
+    }
+    return options.inverse(this);
+  });
+
 
 // Registering a custom helper to format dates
 Handlebars.registerHelper('formatDate', function(date) {
