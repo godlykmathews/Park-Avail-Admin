@@ -10,7 +10,6 @@ const state = {
 
 module.exports.connect = async function(done) {
     try {
-        const url = 'mongodb+srv://workgkm:thisisgkm@clusterparkingapp.htl7b.mongodb.net/?retryWrites=true&w=majority&appName=ClusterParkingApp';
         const dbname = 'ParkingApp';
 
         const client = await MongoClient.connect(url, {
