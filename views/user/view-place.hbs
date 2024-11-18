@@ -4,8 +4,8 @@
             <div class="col-12">
                 <form action="/place" method="GET" role="form">
 
-                    <label for="district">Choose a District: </label>
-                    <select name="district" id="district" required>
+                   <label for="district" style="font-weight: bold;">Choose a District: </label>
+                    <select name="district" id="district" style="border-radius: 15px" required>
                         <option value="">Select</option>
                         <option value="Alappuzha">Alappuzha</option>
                         <option value="Ernakulam">Ernakulam</option>
@@ -20,10 +20,9 @@
                         <option value="Pathanamthitta">Pathanamthitta</option>
                         <option value="Thiruvananthapuram">Thiruvananthapuram</option>
                         <option value="Thrissur">Thrissur</option>
-                        <option value="Wayanad">Wayanad</option>                      
+                        <option value="Wayanad">Wayanad</option>
                     </select>
-
-                    <button type="submit" class="btn btn-primary">Show Spots</button>
+                    <button type="submit" class="btn btn-info" style="border-radius: 25px">Show Spots</button>
                 </form>
             </div>
         </div>
@@ -31,13 +30,19 @@
         <div class="row">
             {{#each products}}
             <div class="col-sm-6 col-md-4 col-lg-3 p-3">
-                <div class="card" style="width: 100%; height: 100%;">
-                    <img class="card-img-top img-fluid" style="object-fit: cover; height: auto;" src="{{this.image}}" alt="Card image cap">
+                <div class="card" style="width: auto; height: 100%;">
+                    <img class="card-img-top img-fluid" style="object-fit: cover; height: 200px;" src="{{this.image}}" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">{{this.name}}</h5>
+                        <h5 class="card-title" style="display: inline-flex;">{{this.name}}</h5>
+                        {{#if this.availability}}
+                        <span style="color: green; display: inline-flex;"><i class="fa fa-check" aria-hidden="true"></i></span>
+                        {{else}}
+                        <span style="color: brown; display: inline-flex;"><i class="fa fa-times" aria-hidden="true"></i></span>
+                        {{/if}}
                         <p class="card-text">Rs. {{this.price}}</p>
                         <p class="card-text">Location: {{this.location}}</p>
                         <p class="card-text">District: {{this.district}}</p>
+                        
                     </div>
                 </div>
             </div>

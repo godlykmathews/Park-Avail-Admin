@@ -7,8 +7,8 @@
             <div class="col-12">
                 <form action="/admin/place" method="GET" role="form">
 
-                    <label for="district">Choose a District: </label>
-                    <select name="district" id="district" required>
+                    <label for="district" style="font-weight: bold;">Choose a District: </label>
+                    <select name="district" id="district" style="border-radius: 15px" required>
                         <option value="">Select</option>
                         <option value="Alappuzha">Alappuzha</option>
                         <option value="Ernakulam">Ernakulam</option>
@@ -23,10 +23,9 @@
                         <option value="Pathanamthitta">Pathanamthitta</option>
                         <option value="Thiruvananthapuram">Thiruvananthapuram</option>
                         <option value="Thrissur">Thrissur</option>
-                        <option value="Wayanad">Wayanad</option>                      
+                        <option value="Wayanad">Wayanad</option>
                     </select>
-
-                    <button type="submit" class="btn btn-primary">Show Spots</button>
+                    <button type="submit" class="btn btn-info" style="border-radius: 25px">Show Spots</button>
                 </form>
             </div>
         </div>
@@ -50,28 +49,36 @@
                     <tr>
                         <th scope="row">
                             {{#if this.availability}}
-                                <button class="btn btn-success btn-sm"  data-toggle="tooltip" title="Available" >{{this.counter}}</button>
+                            <button class="btn btn-success btn-sm" data-toggle="tooltip"
+                                title="Available">{{this.counter}}</button>
                             {{else}}
-                                <button class="btn btn-danger btn-sm"  data-toggle="tooltip" title="Not Available" >{{this.counter}}</button>
+                            <button class="btn btn-danger btn-sm" data-toggle="tooltip"
+                                title="Not Available">{{this.counter}}</button>
                             {{/if}}
                         </th>
                         <td>{{this.name}}</td>
                         <td>{{this.price}}</td>
                         <td>{{this.location}}, {{this.district}}</td>
                         <td>{{this.aslots}}/{{this.tslots}}</td>
-                        <td><img class="img-fluid" style="max-width: 42px; height: auto;" src="{{this.image}}" alt=""></td>
+                        <td><img class="img-fluid" style="max-width: 42px; height: auto;" src="{{this.image}}" alt="">
+                        </td>
                         <td>{{formatDate this.createdAt}}</td>
                         <td>
                             <div class="d-flex justify-content-around">
-                                <a href="/admin/edit-place/{{this._id}}" class="btn btn-primary btn-sm mr-2" title="Edit"><i class="fa-regular fa-pen-to-square"></i></a>
-                                <a href="/admin/delete-place/{{this._id}}" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm ml-2" title="Delete"><i class="fa-solid fa-trash"></i></a>
+                                <a href="/admin/edit-place/{{this._id}}" class="btn btn-primary btn-sm mr-2"
+                                    title="Edit"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a href="/admin/delete-place/{{this._id}}" onclick="return confirm('Are you sure?')"
+                                    class="btn btn-danger btn-sm ml-2" title="Delete"><i
+                                        class="fa-solid fa-trash"></i></a>
                             </div>
                         </td>
                         <th scope="row">
                             {{#if this.availability}}
-                                <button class="btn btn-success btn-sm"  data-toggle="tooltip" title="Available" >Available</button>
+                            <button class="btn btn-success btn-sm" data-toggle="tooltip"
+                                title="Available">Available</button>
                             {{else}}
-                                <button class="btn btn-danger btn-sm"  data-toggle="tooltip" title="Not Available" >Not Available</button>
+                            <button class="btn btn-danger btn-sm" data-toggle="tooltip" title="Not Available">Not
+                                Available</button>
                             {{/if}}
                         </th>
                     </tr>
@@ -89,14 +96,18 @@
                         <p class="card-text"><strong>Location:</strong> {{this.location}}</p>
                         <p class="card-text"><strong>Available Slots:</strong> {{this.aslots}}/{{this.tslots}}</p>
                         <img class="img-fluid mb-2" style="max-width: 100px; height: auto;" src="{{this.image}}" alt="">
-                         <div class="d-flex justify-content-around">
+                        <div class="d-flex justify-content-around">
                             {{#if this.availability}}
-                                <button class="btn btn-success btn-sm"  data-toggle="tooltip" title="Available" >Available</button>
+                            <button class="btn btn-success btn-sm" data-toggle="tooltip"
+                                title="Available">Available</button>
                             {{else}}
-                                <button class="btn btn-danger btn-sm"  data-toggle="tooltip" title="Not Available" >Not Available</button>
+                            <button class="btn btn-danger btn-sm" data-toggle="tooltip" title="Not Available">Not
+                                Available</button>
                             {{/if}}
-                                <a href="/admin/edit-place/{{this._id}}" class="btn btn-primary btn-sm mr-2"><i class="fa-regular fa-pen-to-square"></i></a>
-                                <a href="/admin/delete-place/{{this._id}}" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm ml-2"><i class="fa-solid fa-trash"></i></a>
+                            <a href="/admin/edit-place/{{this._id}}" class="btn btn-primary btn-sm mr-2"><i
+                                    class="fa-regular fa-pen-to-square"></i></a>
+                            <a href="/admin/delete-place/{{this._id}}" onclick="return confirm('Are you sure?')"
+                                class="btn btn-danger btn-sm ml-2"><i class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
                 </div>
